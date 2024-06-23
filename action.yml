@@ -1,6 +1,6 @@
 # action.yml
-name: 'Release tags from label'
-description: 'Define the next release tag using label'
+name: 'Get tag version from Pull Request labels'
+description: 'Define the next release tag using PR label'
 inputs:
   crash_on_error:
     description: 'If set to "true", the action will crash if an error occurs'
