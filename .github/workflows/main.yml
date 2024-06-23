@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  ghtagrelease:
+    runs-on: ubuntu-latest
+    name: A job to release tags from label
+    outputs:
+      tag: ${{ steps.tag_release.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Retrieve release tag from labels
+        id: tag_release
+        uses: quentinchampenois/gh-tag-release-action@main
+        with:
+          crash_on_error: "true"
+      - name: Get the next version
+        run: echo "This is the next version ${{ steps.tag_release.outputs.tag }}"
