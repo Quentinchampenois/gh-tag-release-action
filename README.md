@@ -31,6 +31,18 @@ Options :
 
 `crash_on_error` : If set to true, the action will crash if no tag is found. Default is **true**
 
+### How it works
+
+* Create a release PR
+* Create new label on the PR with one of the following format
+    * `release: 1.0.0`
+    * `release: v1.0.0`
+    * `release:v1.0.0`
+    * `release:1.0.0`
+* Merge the PR
+* Configure the action in your workflow to run on **push**
+* Action will get the merge commit, retrieve the related PR and extract the tag version from the labels
+
 ### Example of workflow 
 
 You can get the tag version from the next job using the `outputs` key on job like this :
