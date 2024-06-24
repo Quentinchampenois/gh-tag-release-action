@@ -1,5 +1,5 @@
 # action.yml
-name: 'Get tag version from Pull Request labels'
+name: 'Tag from PR label'
 description: 'Define the next release tag using PR label'
 inputs:
   crash_on_error:
