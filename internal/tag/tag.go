@@ -51,7 +51,7 @@ func GetReleaseTag(ctx context.Context, client *github.Client, repo *github.Repo
 	var tag Tag
 	pr, _, err := client.PullRequests.Get(ctx, *repo.Owner.Login, *repo.Name, number)
 	if err != nil {
-		log.Printf("Error fetching pull requests for %s/%s: %v", "opensourcepolitics", *repo.Name, err)
+		log.Printf("Error fetching pull requests for %s/%s: %v", *repo.Owner.Login, *repo.Name, err)
 		return tag
 	}
 
